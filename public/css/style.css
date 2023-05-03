@@ -1,0 +1,678 @@
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    justify-content: space-between;
+    display: flex;
+    padding-left: 3%;
+    background-color: rgba(255, 255, 255, 0.55);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header a img {
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+body {
+    font-family: "Shippori Mincho", serif;
+    width: 100%;
+    height: 100%;
+    letter-spacing: 0.1em;
+    background: url("/images/bg_gry_01.jpg") 0 0 fixed;
+    background-size: 100%;
+}
+
+/* slick */
+.slider {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+}
+.slider-item01 {
+    background: url("/images/entrance.jpg");
+}
+.slider-item02 {
+    background: url("/images/wine.jpg");
+}
+.slider-item03 {
+    background: url("/images/dining01.jpg");
+}
+.slider-item04 {
+    background: url("/images/dish08.jpg");
+}
+.slider-item {
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+/* 矢印 */
+.slick-prev,
+.slick-next {
+    position: absolute;
+    z-index: 3;
+    top: 42%;
+    cursor: pointer;
+    outline: none;
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+    height: 25px;
+    width: 25px;
+}
+.slick-prev {
+    left: 2.5%;
+    transform: rotate(-135deg);
+}
+.slick-next {
+    right: 2.5%;
+    transform: rotate(45deg);
+}
+.slick-dots {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    margin: -50px 0 0 0;
+}
+.slick-dots li {
+    display: inline-block;
+    margin: 0 8px;
+}
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    border: none;
+    width: 40px;
+    height: 8px;
+    display: block;
+    border-radius: 5%;
+    background: #fff;
+}
+.slick-dots .slick-active button {
+    background: gray;
+}
+
+/* concept */
+#concept {
+    margin-top: 20%;
+}
+.concept-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+    background-image: url("/images/farm00.JPG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+#concept h1 {
+    margin-left: 5%;
+    margin-bottom: 10%;
+    font-size: 2rem;
+    border-bottom: 3px solid;
+}
+.concept-top p {
+    font-size: 50px;
+    text-shadow: 3px 3px 2px black;
+}
+.box-01,
+.box-02,
+.box-03,
+.box-04 {
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    margin-top: 10%;
+}
+.box-01,
+.box-03 {
+    flex-direction: row-reverse; /*横並びを反転 */
+}
+.box-01 p,
+.box-02 p,
+.box-03 p,
+.box-04 p {
+    font-size: 2rem;
+}
+.box-01 img,
+.box-02 img,
+.box-03 img,
+.box-04 img {
+    display: block;
+    clip-path: polygon(25% 0, 100% 0%, 80% 100%, 0% 100%);
+    width: 40%;
+    height: auto; /* autoで縦横比を調整 */
+}
+/* メニュー */
+#menu {
+    width: 100%;
+    margin-top: 30%;
+}
+#menu h1 {
+    margin-left: 5%;
+    margin-bottom: 10%;
+    font-size: 2rem;
+    border-bottom: 3px solid;
+}
+.list-titel {
+    text-align: center;
+    margin-top: 10%;
+    font-size: 1.5rem;
+}
+.item {
+    white-space: nowrap;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.item ul {
+    display: flex;
+    justify-content: space-around;
+}
+.list p {
+    margin-top: 2rem;
+}
+.sublist {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 6rem;
+    margin-bottom: 1rem;
+}
+.slider-b img {
+    width: 100%;
+    height: auto;
+}
+.slider-b .slick-slide {
+    margin: 50px 10px;
+}
+/*　ハンバーガーボタン　*/
+.hamburger {
+    position: fixed;
+    z-index: 9999;
+    color: black;
+    right: 13px;
+    top: 20px;
+    width: 80px;
+    height: 100px;
+    cursor: pointer;
+    text-align: center;
+}
+.hamburger span {
+    display: inline-block;
+    position: absolute;
+    width: 40%;
+    height: 3px;
+    left: 14px;
+    border-radius: 2px;
+    transition: all 0.4s;
+    background-color: #666;
+}
+.hamburger span:nth-child(1) {
+    top: 16px;
+}
+.hamburger span:nth-child(2) {
+    top: 23px;
+}
+.hamburger span:nth-child(3) {
+    top: 31px;
+}
+
+/* ナビ開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+    top: 18px;
+    left: 18px;
+    -webkit-transform: rotate(315deg);
+    -moz-transform: rotate(315deg);
+    transform: translateY(6px) rotate(315deg);
+    width: 30%;
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    top: 30px;
+    left: 18px;
+    -webkit-transform: rotate(-315deg);
+    -moz-transform: rotate(-315deg);
+    transform: translateY(-6px) rotate(-315deg);
+    width: 30%;
+}
+
+#g-nav.panelactive {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+}
+#g-nav-list {
+    font-size: 20px;
+    display: none;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+#g-nav.panelactive #g-nav-list {
+    display: block;
+}
+#g-nav ul {
+    opacity: 0; /* 最初は透過 */
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* 背景出現後に表示 */
+#g-nav.panelactive ul {
+    opacity: 1;
+}
+#g-nav.panelactiv ul li {
+    animation-name: gnaviAnime;
+    animation-duration: 0.2s;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes gnaviAnime {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* 丸の形 */
+.circle-bg {
+    position: fixed;
+    z-index: 3;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    /* 丸のスタート位置 */
+    transform: scale(0);
+    right: -50%;
+    top: calc(50% -50px); /* 50%から円の半径を引いた値 */
+    transition: all 0.6s;
+}
+
+.circle-bg.circleactive {
+    transform: scale(50);
+}
+/* 検証用 */
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+nav ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+    margin: 10px;
+    padding: 10px;
+}
+/* ここまで */
+.chef {
+    display: flex;
+    justify-content: space-around;
+}
+#chef h1 {
+    margin-left: 5%;
+    margin-bottom: 5%;
+    font-size: 2rem;
+    border-bottom: 3px solid;
+}
+#chef img {
+    width: 35%;
+    height: auto;
+    margin: 2%;
+}
+.chef-content {
+    margin-top: 5%;
+    align-items: center;
+    font-size: 1rem;
+}
+/* footer */
+footer {
+    background-color: black;
+    color: white;
+}
+.boxset {
+    display: flex;
+    justify-content: space-around;
+}
+#reserve {
+    padding-top: 10%;
+}
+#reserve h1 {
+    margin-left: 5%;
+    margin-bottom: 5%;
+    font-size: 2rem;
+    border-bottom: 3px solid;
+}
+.cancel {
+    display: inline-block;
+    border-bottom: 1px solid;
+}
+.right_box,
+.left_box {
+    padding-left: 5%;
+    width: 40%;
+}
+.reserve-content p {
+    margin: 2%;
+    font-size: 1rem;
+}
+.reserve-content a {
+    font-size: 1.5rem;
+    margin-left: 2%;
+}
+.reserve-content a:link {
+    color: #fff;
+}
+.map {
+    padding: 5%;
+}
+.acces {
+    font-size: 1rem;
+    text-align: center;
+}
+#acces h1 {
+    margin-left: 5%;
+    margin-bottom: 5%;
+    font-size: 2rem;
+    border-bottom: 3px solid;
+}
+
+.sns {
+    display: flex;
+}
+.sns img {
+    display: block;
+    height: 50px;
+    width: 50px;
+    margin: 5%;
+}
+#sns {
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*========= ページトップのためのCSS ===============*/
+
+/*スクロールリンクの形状*/
+.scroll-top {
+    /*表示位置*/
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    z-index: 2;
+    /*はじめは非表示*/
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s; /*それぞれに0.5秒の変化のアニメーション*/
+    /*縦書き*/
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    /*改行禁止*/
+    white-space: nowrap;
+    /*矢印の動き*/
+    animation: arrowmove 1s ease-in-out infinite;
+}
+
+@keyframes arrowmove {
+    0% {
+        bottom: 20px;
+    }
+    50% {
+        bottom: 25px;
+    }
+    100% {
+        bottom: 20px;
+    }
+}
+
+/*.scroll-viewクラスがついたら出現*/
+.scroll-top.scroll-view {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*リンク全体の aタグの形状*/
+.scroll-top a {
+    text-decoration: none;
+    color: #666;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    display: block;
+}
+
+/*スクロールリンクの形状*/
+
+.js-scroll a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 50px;
+    background: #666;
+}
+
+.js-scroll a::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    right: -6px;
+    width: 1px;
+    height: 20px;
+    background: #666;
+    transform: skewX(-31deg);
+}
+
+/*Edge IE11 hack*/
+_:-ms-lang(x),
+.js-scroll a::before {
+    right: -11px;
+}
+
+/*ページトップリンクの形状*/
+
+.js-pagetop a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 50px;
+    background: #666;
+}
+
+.js-pagetop a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -6px;
+    width: 1px;
+    height: 20px;
+    background: #666;
+    transform: skewX(31deg);
+}
+
+/*Edge IE11 hack*/
+_:-ms-lang(x),
+.js-pagetop a::before {
+    right: 0;
+}
+
+/* Loading背景画面設定　*/
+#splash {
+    /*fixedで全面に固定*/
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: #fff;
+    text-align: center;
+    color: #fff;
+}
+
+/* Loading画像中央配置　*/
+#splash_logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Loading アイコンの大きさ設定　*/
+#splash_logo img {
+    width: 260px;
+}
+
+/* fadeUpをするアイコンの動き */
+
+.fadeUp {
+    animation-name: fadeUpAnime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#container {
+    width: 100%;
+    height: 100vh;
+    background: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+a {
+    color: #333;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+/* fadeUp */
+
+.fadeUp {
+    animation-name: fadeUpAnime;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+
+.fadeUpTrigger {
+    opacity: 0;
+}
+
+@media screen and (max-width: 600px) {
+    * {
+        float: none;
+        position: static;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    /* ここまで初期化設定 */
+    .concept-top p {
+        font-size: 2rem;
+        text-shadow: 3px 3px 2px black;
+    }
+    .box-01 p,
+    .box-02 p,
+    .box-03 p,
+    .box-04 p {
+        font-size: 0.8rem;
+    }
+    .list-titel {
+        font-size: 1rem;
+    }
+    .item {
+        text-align: center;
+        white-space: nowrap;
+        font-size: 0.8rem;
+    }
+    .list p {
+        margin-top: 2rem;
+    }
+    #concept h1,
+    #menu h1,
+    #reserve h1,
+    #acces h1,
+    #chef h1 {
+        font-size: 1.5rem;
+    }
+    .chef-content {
+        font-size: 0.6rem;
+    }
+
+    .sublist {
+        font-size: 0.5rem;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+    .reserve-content p,
+    .reserve-content a,
+    .acces {
+        font-size: 0.6rem;
+    }
+}
